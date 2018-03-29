@@ -13,8 +13,9 @@ class Map(object):
         for child in self.root:
             for key in change_dict.keys():
                 if 'path' in child.tag and child.attrib['id'] == key:
+                    print('find')
                     child.attrib['fill'] = change_dict[key]
-                    continue
+                    break
         self.tree.write(self.new_map)
 
 
